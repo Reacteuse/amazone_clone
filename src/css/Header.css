@@ -17,18 +17,24 @@
     display: flex;
     flex: 1;
     align-items: center;
-    border-radius: 22px;
 }
 .header_inputSearch {
     height: 12px;
     padding : 10px ; 
     border: none;
     width: 100%;
+    border-radius: 14px 0 0 14px ;
+    background-color: rgba(255, 255, 255, 0.918);
 }
+.header_inputSearch:hover {
+    background-color: rgb(255, 255, 255);
+}
+
 .header_iconSearch {
     padding : 5px; 
     height: 22px !important;
     background-color: #FF9900;
+    border-radius: 0  14px 14px 0  ;
 }
 .header_nav {
     display: flex;

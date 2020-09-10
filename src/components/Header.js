@@ -12,7 +12,7 @@ function Header() {
     const options = [
         {
             id : 1 ,
-            primaryText : "SignIn",
+            primaryText : "Sign In",
             secondaryText : "Hello",
             url: "/"
         } , 

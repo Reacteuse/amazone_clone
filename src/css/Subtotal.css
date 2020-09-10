@@ -2,32 +2,98 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 300px;
-    height: 100px;
+    min-width: 250px;
+    min-height: 150px;
     padding : 20px ;
-    background-color: #f3f3f3;
+    background-color: #ffffff;
     border : 1px solid #dddddd;
-    border-radius: 8px;
+    border-radius: 10px;
  }
 
 .subtotal_gift {
     display: flex;
     align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .subtotal_gift > input {
     margin-right: 5px;
 }
 
-.subtotal_root > button {
+.checkout_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout_button > button {
     background-color: #da9b3c;
     color: #111111;
     border : none ;
     border-radius: 8px;
-    padding:8px;
-    margin-top: 10px;
+    padding:10px;
 }
 
-.subtotal_root > button:hover {
+.checkout_button > button:hover {
     background-color: #ff9900;
 }
+
+
+
+
+
+
+.subtotal_basket {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;    
+    margin-top: 30px;
+}
+   
+.basket_row {
+    display: flex;
+    direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    
+}
+   
+.basket_row > img {
+    max-height:  50px;
+    width: 50px;
+    object-fit: contain;
+    margin-right: 20px;
+    margin-left: 8px;
+}
+   
+.subtotal_basket_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding : 8px;
+}
+   
+.subtotal_basket_info > small {
+    margin-bottom: 5px;
+    font-size: 10px;
+}
+   
+.subtotal_basket_info > strong {
+    margin-bottom: 5px;
+}
+
+.basket_info > button:hover {
+    background-color: #ff9900;
+}
+
+.subtotal_product_rating {
+    color : yellow ;
+
+}
+   
