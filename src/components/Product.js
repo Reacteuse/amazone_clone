@@ -1,10 +1,28 @@
 import React from 'react'
 import 'css/Product.css'
 import {Star, StarBorder} from '@material-ui/icons';
-function Product({description , image, price, rating}) {
+import { useStateValue } from 'route/StateProvider';
+
+
+function Product({id, description , image, price, rating}) {
+
+    const [state, dispatch] = useStateValue()
+
+    const addToBasket = () => {
+        /* dispatch the item into the data layer */
+        dispatch({
+            type : 'ADD_TO_BASKET',
+            item : {
+                id : id ,
+                description : description ,
+                image : image ,
+                price : price ,
+                rating : rating
+            }
+        })
+    }   
     return (
         <div className="product_root">
-
             <div className="product_info">
                 <p className="product_description">
                     {description}
@@ -18,7 +36,7 @@ function Product({description , image, price, rating}) {
                         <Star />
                     ))}
                     {Array(5-rating).fill().map(()=>(
-                        <StarBorder />
+                        <StarBorder/>
                     ))}
                 </div>
             </div>
@@ -27,9 +45,11 @@ function Product({description , image, price, rating}) {
                     alt={description + 'image'}
                     className="product_image"
                     src={image}
-            />
-                
-            <button className='product_button'>
+            />  
+            <button 
+                className='product_button'
+                onClick={addToBasket} 
+             >
                 add to basket
             </button>
 

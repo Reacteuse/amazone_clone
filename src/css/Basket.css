@@ -1,0 +1,55 @@
+.basket_root {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ justify-content: flex-start;
+ width: 90%;
+}
+
+.basket {
+    display: flex;
+    direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 80px;
+    margin-top: 30px;
+}
+
+.basket > img {
+    max-height:  200px;
+    width: 100px;
+    object-fit: contain;
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+.basket_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding : 8px;
+}
+
+.basket_info > small {
+     margin-bottom: 5px;
+}
+
+.basket_info > strong {
+    margin-bottom: 5px;
+}
+
+.basket_info > button {
+    background-color: #da9b3c;
+    color: #111111;
+    border : none ;
+    border-radius: 7px;
+    padding:5px;
+    margin-top: 10px;
+}
+
+ 
+
+.basket_info > button:hover {
+    background-color: #ff9900;
+}
+

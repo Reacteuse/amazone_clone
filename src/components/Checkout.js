@@ -1,8 +1,9 @@
 import React from 'react'
 import "css/checkout.css"
 import Subtotal from "components/Subtotal"
+import Basket from "components/Basket"
 function Checkout() {
-    return (
+     return (
         <div className="checkout_root">
             {/* RIGHT CARD */}
             <div className="checkout_left">
@@ -12,7 +13,8 @@ function Checkout() {
                     src={process.env.PUBLIC_URL  + '/images/adon.jpg'}
                 />
                 <div>
-                    <h2 className="checkout_title">your shopping basket</h2>
+                    <h1 className="checkout_title">your shopping basket</h1>
+                    <Basket />
                 </div>
              </div>
             {/* LEFT CARD */}
