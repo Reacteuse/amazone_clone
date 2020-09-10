@@ -2,7 +2,7 @@ import React from 'react'
 import {Search, ShoppingBasket} from "@material-ui/icons"
 import { Link } from 'react-router-dom'
 import 'css/Header.css'
-import { useStateValue } from '../route/StateProvider'
+import { useStateValue } from 'Redux/StateProvider'
 
  
  

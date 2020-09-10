@@ -1,7 +1,7 @@
 import React from 'react'
 import 'css/Product.css'
 import {Star, StarBorder} from '@material-ui/icons';
-import { useStateValue } from 'route/StateProvider';
+import { useStateValue } from 'Redux/StateProvider';
 
 
 function Product({id, description , image, price, rating}) {

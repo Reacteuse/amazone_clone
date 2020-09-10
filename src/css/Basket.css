@@ -1,11 +1,11 @@
-.basket_root {
+/* .basket_root {
  display: flex;
  flex-direction: column;
  align-items: flex-start;
  justify-content: flex-start; 
-     margin-top: 30px;
+margin-top: 30px;
 
-}
+} */
 
 .basket {
     display: flex;

@@ -1,37 +1,40 @@
 import React from 'react'
-import { useStateValue } from '../route/StateProvider'
 import { Star, StarBorder } from '@material-ui/icons'
 import 'css/Basket.css'
+import { useStateValue } from 'Redux/StateProvider'
 
-function Basket() {
-    const [{basket}] = useStateValue()
+
+function Basket({id, description , image, price, rating}) {
+    const [{basket}, dispatch] = useStateValue()
  
+    const removeFromBasket = () => {
+        dispatch({
+            type : 'REMOVE_FROM_BASKET',
+            id : id
+        })
+    }
     return (
-        <div className="basket_root">
-            {basket.map((elmt)=>(
-                <div className="basket" key={elmt.id}>
-                    <img 
-                        alt={elmt.description}
-                        src={elmt.image}
-                    />
-                    <div className="basket_info">
-                        <small>{elmt.description}</small>
-                        <strong>{elmt.price} $</strong>
-                        <div className="product_rating">
-                            {Array(elmt.rating).fill().map(()=>(
-                                <Star />
-                            ))}
-                            {Array(5 - elmt.rating).fill().map(()=>(
-                                <StarBorder/>
-                            ))}
-                        </div>
-                        <button  >
-                            remove from the basket
-                        </button>
-                    </div>
-
+        <div className="basket" >
+            <img 
+                alt={description}
+                src={image}
+            />
+            <div className="basket_info">
+                <small>{description}</small>
+                <strong>{price} $</strong>
+                <div className="product_rating">
+                    {Array(rating).fill().map(()=>(
+                        <Star />
+                    ))}
+                    {Array(5 - rating).fill().map(()=>(
+                        <StarBorder/>
+                    ))}
                 </div>
-            ))}
+                <button onClick={removeFromBasket}  >
+                    remove from the basket
+                </button>
+            </div>
+
         </div>
     )
 }

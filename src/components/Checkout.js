@@ -2,7 +2,9 @@ import React from 'react'
 import "css/checkout.css"
 import Subtotal from "components/Subtotal"
 import Basket from "components/Basket"
+import { useStateValue } from 'Redux/StateProvider'
 function Checkout() {
+    const [{basket}] = useStateValue ()
      return (
         <div className="checkout_root">
             {/* RIGHT CARD */}
@@ -14,12 +16,16 @@ function Checkout() {
                 />
                 <div>
                     <h1 className="checkout_title">your shopping basket</h1>
-                    <Basket />
+                    <div className="checkout_basket_content">
+                        {basket.map((elmt)=>(
+                            <Basket key={elmt.id} id={elmt.id} description={elmt.description} image={elmt.image} price={elmt.price} rating={elmt.rating}  />
+                        ))}
+                    </div>
                 </div>
              </div>
             {/* LEFT CARD */}
             <div className="checkout_right">
-                <Subtotal />
+                <Subtotal/>
             </div>
         </div>
     )

@@ -1,18 +1,17 @@
 import React from 'react'
 import 'css/Subtotal.css'
-import CurrencyFormat from "react-currency-format"
-import { useStateValue } from '../route/StateProvider'
 import { Star, StarBorder } from '@material-ui/icons'
+import CurrencyFormat from "react-currency-format"
+import { useStateValue } from 'Redux/StateProvider'
+import {getBasketTotal} from "Redux/reducer"
 
 function Subtotal() {
     const [{basket}] = useStateValue()
-    const getSubtotal = basket.reduce((acc, cur) => parseFloat(acc) + parseFloat(cur.price) , 0)
-
     return (
         <div className="subtotal_root">
             <CurrencyFormat 
                 decimalScale={2}
-                value={getSubtotal}
+                value={getBasketTotal(basket)}
                 renderText= {(value)=>(
                     <>
                         <p>
@@ -55,7 +54,6 @@ function Subtotal() {
                                 ))}
                             </div>
                         </div>
-
                     </div>
                 ))}
             </div>   
