@@ -17,7 +17,7 @@ function Home() {
                         description="Echo Dot (3rd Gen) Plum with Echo Auto" 
                         price="69.99" 
                         image={ process.env.PUBLIC_URL   +'/images/products/alexa.jpg'}  
-                        rating={0}   
+                        rating={3}   
                     />
                     <Product 
                         id="2"

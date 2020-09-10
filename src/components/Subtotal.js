@@ -5,12 +5,12 @@ import { useStateValue } from '../route/StateProvider'
 
 function Subtotal() {
     const [{basket}] = useStateValue()
-    const getSubtotal = basket.reduce((acc, cur) => acc + parseFloat(cur.price) , 0)
+    const getSubtotal = basket.reduce((acc, cur) => parseFloat(acc) + parseFloat(cur.price) , 0)
 
     return (
         <div className="subtotal_root">
             <CurrencyFormat 
-                decimaleScale={2}
+                decimalScale={2}
                 value={getSubtotal}
                 renderText= {(value)=>(
                     <>
@@ -24,8 +24,10 @@ function Subtotal() {
                     </>
                 )}
                 displayType={"text"}
+                fixedDecimalScale={true}
                 thousandSeparator={true}
-                prefix={"$"}
+                allowNegative={false}
+                suffix={" $"}
             />
             <button>
                 proceed to checkout
