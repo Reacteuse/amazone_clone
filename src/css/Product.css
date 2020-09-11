@@ -60,3 +60,6 @@
                 0 0 100px #f48c03;
 } 
 
+.product_root:hover {
+    box-shadow: 0 15px 25px #00000085;
+}

@@ -25,7 +25,7 @@ function Checkout () {
                 />
                 <div>
                     <h2  className="checkout_title">{user? 'Hello '+ user:null }</h2>
-                    <h1 className="checkout_subTitle">your shopping basket</h1>
+                    <h1 className="checkout_subTitle">{basket?.length===0?'your shopping basket is empty !':'your shopping basket'}</h1>
                     <div className="checkout_basket_content">
                     <FlipMove
                         easing="ease-in"
