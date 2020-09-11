@@ -3,31 +3,39 @@ import {Search, ShoppingBasket} from "@material-ui/icons"
 import { Link } from 'react-router-dom'
 import 'css/Header.css'
 import { useStateValue } from 'Redux/StateProvider'
+import {auth} from 'firebaseInit/firebase'
 
  
  
 function Header() {
  
-    const [{basket}] = useStateValue()
+    const [{basket,user}] = useStateValue()
+    const handleAuthentification = () => {
+        if(user){
+            auth.signOut()
+        }
+    }
     const options = [
         {
             id : 1 ,
-            primaryText : "Sign In",
-            secondaryText : "Hello",
-            url: "/"
+            primaryText : user? 'Sign Out' : 'Sign In',
+            secondaryText : user ? 'Hello '+user : 'Join Us',
+            url: user? '/' : '/login' ,
+            handleFunction : handleAuthentification 
         } , 
         {
             id : 2 ,
             primaryText : "Orders",
             secondaryText : "Returns",
-            url: "/"
-
+            url: "/",
+            handleFunction : null 
         } , 
         {
             id : 3 ,
             primaryText : "Prime",
             secondaryText : "Your",
-            url: "/"
+            url: "/",
+            handleFunction : null 
 
         } , 
     ]
@@ -54,7 +62,7 @@ function Header() {
                 {options.map((elmt)=>(  
                     <div className="header_option" key={elmt.id}>
                         <span className="header_optionSecondary">{elmt.secondaryText}</span>
-                        <Link to={elmt.url} style={{textDecoration: "none" }}>
+                        <Link to={elmt.url} style={{textDecoration: "none" }} onClick={elmt.handleFunction}>
                             <span className="header_optionPrimary">{elmt.primaryText}</span>
                         </Link>
                     </div>

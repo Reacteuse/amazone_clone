@@ -40,7 +40,7 @@
     margin-bottom: 15px;
 }
 .product_button { 
-    background: #f6ae41;
+    background: #f49403;
     border: 1px solid;
     border-radius: 3px;
     border-color: #b9730a #a36406 #89590f ;
@@ -50,11 +50,13 @@
 } 
 
 .product_button:hover { 
-    background: #ff9900;
-    border: 1px solid;
-    border-radius: 3px;
-    border-color: #ffdaa3 #ffd89d #eaba71 ;
-    margin-top: 10px;
-    padding : 5px;
-    color: #131A22;
+    background: #f49403;
+    color: #fff;
+    border-color: #f49403;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #f48c03,
+                0 0 25px #f48c03,
+                0 0 50px #f48c03,
+                0 0 100px #f48c03;
 } 
+

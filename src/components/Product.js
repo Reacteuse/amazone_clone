@@ -6,7 +6,7 @@ import { useStateValue } from 'Redux/StateProvider';
 
 function Product({id, description , image, price, rating}) {
 
-    const [state, dispatch] = useStateValue()
+    const [{}, dispatch] = useStateValue()
 
     const addToBasket = () => {
         /* dispatch the item into the data layer */

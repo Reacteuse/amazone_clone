@@ -1,11 +1,12 @@
-import React from 'react'
+import React , { forwardRef }  from 'react'
 import { Star, StarBorder } from '@material-ui/icons'
 import 'css/Basket.css'
 import { useStateValue } from 'Redux/StateProvider'
 
 
-function Basket({id, description , image, price, rating}) {
-    const [{basket}, dispatch] = useStateValue()
+
+const Basket = forwardRef(({id, description , image, price, rating}, ref) => {
+    const [{},dispatch] = useStateValue()
  
     const removeFromBasket = () => {
         dispatch({
@@ -13,8 +14,9 @@ function Basket({id, description , image, price, rating}) {
             id : id
         })
     }
+
     return (
-        <div className="basket" >
+        <div className="basket" ref={ref} >
             <img 
                 alt={description}
                 src={image}
@@ -34,9 +36,9 @@ function Basket({id, description , image, price, rating}) {
                     remove from the basket
                 </button>
             </div>
-
         </div>
     )
-}
+})
 
 export default Basket
+ 

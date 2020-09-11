@@ -1,50 +1,4 @@
-.subtotal_root{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-width: 250px;
-    min-height: 150px;
-    padding : 20px ;
-    background-color: #ffffff;
-    border : 1px solid #dddddd;
-    border-radius: 10px;
- }
-
-.subtotal_gift {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.subtotal_gift > input {
-    margin-right: 5px;
-}
-
-.checkout_button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.checkout_button > button {
-    background-color: #da9b3c;
-    color: #111111;
-    border : none ;
-    border-radius: 8px;
-    padding:10px;
-}
-
-.checkout_button > button:hover {
-    background-color: #ff9900;
-}
-
-
-
-
-
-
-.subtotal_basket {
+ .subtotal_basket {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -88,12 +42,7 @@
     margin-bottom: 5px;
 }
 
-.basket_info > button:hover {
-    background-color: #ff9900;
-}
-
 .subtotal_product_rating {
     color : yellow ;
 
 }
-   

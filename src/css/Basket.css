@@ -45,7 +45,7 @@ margin-top: 30px;
 }
 
 .basket_info > button {
-    background-color: #da9b3c;
+    background-color: #ff9a02;
     color: #111111;
     border : none ;
     border-radius: 7px;
@@ -56,6 +56,11 @@ margin-top: 30px;
  
 
 .basket_info > button:hover {
-    background-color: #ff9900;
+    background: #f49403;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #f48c03,
+                0 0 30px #f48c03,
+                0 0 40px #f48c03;
 }
 
