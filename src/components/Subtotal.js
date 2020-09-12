@@ -1,10 +1,11 @@
 import React ,{ forwardRef }  from 'react'
 import 'css/Subtotal.css'
-import { Star, StarBorder, Delete } from '@material-ui/icons'
+import {  Delete } from '@material-ui/icons'
 import { useStateValue } from 'Redux/StateProvider'
 import { IconButton } from '@material-ui/core'
+import { Rating } from '@material-ui/lab'
 
-const Subtotal = forwardRef(({id, description , image, price, rating},ref) => {
+const Subtotal = forwardRef(({id, description , image, price, rating, qty},ref) => {
     const [{},dispatch] = useStateValue()
  
     const removeFromBasket = () => {
@@ -23,14 +24,16 @@ const Subtotal = forwardRef(({id, description , image, price, rating},ref) => {
                 />
                 <div className="subtotal_basket_info">
                     <small>{description}</small>
+                    <strong>quantity : {qty}</strong>
                     <strong>{price} $</strong>
                     <div className="subtotal_product_rating">
-                        {Array(rating).fill().map(()=>(
-                            <Star fontSize="small" />
-                        ))}
-                        {Array(5 - rating).fill().map(()=>(
-                            <StarBorder fontSize="small" />
-                        ))}
+                        <Rating
+                            name="simple-controlled"
+                            size="small"
+                            value={rating}
+                            precision={0.5}
+                            readOnly
+                        />
                     </div>
                 </div>
                 <IconButton onClick={removeFromBasket} style={{color : "#ff9a02 "}}>

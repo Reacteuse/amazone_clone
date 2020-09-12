@@ -10,10 +10,17 @@ import {auth} from 'firebaseInit/firebase'
 import {useStateValue} from "Redux/StateProvider"
 
 
+/* import { SnackbarProvider } from 'notistack';
+import {IconButton } from '@material-ui/core';
+import { Close } from '@material-ui/icons';
+
+ */
 
 function App() {
 
   const [{},dispatch] = useStateValue()
+/*   const notistackRef = React.createRef();
+  const onClickDismiss = key => () => {notistackRef.current.closeSnackbar(key)} */
 
   useEffect(() => {
     auth.onAuthStateChanged(authUser => {
@@ -48,7 +55,20 @@ function App() {
           </Route>
           <Route path="/">
             <Header/>
-            <Home />
+ {/*            <SnackbarProvider 
+              maxSnack={3} 
+              hideIconVariant 
+              dense
+              ref={notistackRef}
+              action={(key) => (
+                  <IconButton  size="small" aria-label="close" color="inherit" onClick={onClickDismiss(key)}>
+                      <Close fontSize="small" />
+                  </IconButton>
+              )}
+              style={{marginTop:"20px"}}
+            > */}
+              <Home />
+         {/*    </SnackbarProvider> */}
           </Route>
         </Switch>
       </div>

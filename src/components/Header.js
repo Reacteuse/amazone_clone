@@ -1,11 +1,22 @@
 import React from 'react'
-import {Search, ShoppingBasket} from "@material-ui/icons"
+import {Search, ShoppingCart} from "@material-ui/icons"
 import { Link } from 'react-router-dom'
 import 'css/Header.css'
 import { useStateValue } from 'Redux/StateProvider'
 import {auth} from 'firebaseInit/firebase'
 
- 
+import { withStyles } from '@material-ui/core/styles';
+import {IconButton , Badge} from '@material-ui/core';
+
+ const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: 0,
+    top: 0,
+    border: `1px solid ${theme.palette.background.paper}`,
+    padding: '0 2px',
+    marginRight: theme.spacing(1)
+  },
+}))(Badge);
  
 function Header() {
  
@@ -69,11 +80,16 @@ function Header() {
                 ))}
 
                 <div className="header_basketOption">
-                    <Link to="/checkout">
-                        <ShoppingBasket className="header_basket"/>
+                    <Link to='/checkout'>
+                        <IconButton aria-label="cart">
+                            <StyledBadge badgeContent={basket?.length} color="primary">
+                                <ShoppingCart className="header_basket" />
+                            </StyledBadge>
+                        </IconButton>
                     </Link>
-                    <span className="header_basketCount"> {basket?.length} </span>
+      
                 </div>
+
             </div>
                     
         </div>

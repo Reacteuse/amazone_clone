@@ -8,9 +8,6 @@ import {getBasketTotal} from "Redux/reducer"
 
 import FlipMove from 'react-flip-move';
 
-
-
-
 function Checkout () {
     const [{basket,user}] = useStateValue ()
 
@@ -32,7 +29,7 @@ function Checkout () {
                         duration={500}
                     >
                         {basket.map((elmt)=>(
-                            <Basket   key={elmt.id} id={elmt.id} description={elmt.description} image={elmt.image} price={elmt.price} rating={elmt.rating}  />
+                            <Basket   key={elmt.id} id={elmt.id} description={elmt.description} image={elmt.image} price={elmt.price} rating={elmt.rating} qty={elmt.qty}  />
                         ))}
                     </FlipMove>
          
@@ -72,7 +69,7 @@ function Checkout () {
                         duration={500}
                     >
                         {basket.map((elmt)=>(
-                            <Subtotal  key={elmt.id} id={elmt.id} description={elmt.description}  image={elmt.image}  price={elmt.price} rating={elmt.rating} />
+                            <Subtotal  key={elmt.id} id={elmt.id} description={elmt.description}  image={elmt.image}  price={elmt.price} rating={elmt.rating} qty={elmt.qty} />
                         ))}
                     </FlipMove>
                 </div>

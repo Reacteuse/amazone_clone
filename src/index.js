@@ -8,6 +8,7 @@ import theme from "theme/Custom_style"
 import {StateProvider} from 'Redux/StateProvider'
 import reducer , {initialState} from 'Redux/reducer'
 
+
 ReactDOM.render(
   <React.StrictMode>
     <StateProvider initialState={initialState} reducer={reducer} >

@@ -18,6 +18,8 @@ function Home() {
                         price="69.99" 
                         image={ process.env.PUBLIC_URL   +'/images/products/alexa.jpg'}  
                         rating={3}   
+
+                        qty={0}
                     />
                     <Product 
                         id="2"
@@ -25,6 +27,8 @@ function Home() {
                         price="44.21" 
                         image={ process.env.PUBLIC_URL   +'/images/products/stand.jpg'}  
                         rating={3}   
+
+                        qty={1}
                     />
                  </div>
                 <div className="home_row">
@@ -33,14 +37,20 @@ function Home() {
                         description="AmazonBasics Lightning to USB Cable - MFi Certified Apple iPhone Charger, White, 6-Foot" 
                         price="6.26" 
                         image={ process.env.PUBLIC_URL   +'/images/products/cable.jpg'}  
-                        rating={5}   
+                        rating={5}  
+                        
+                        qty={1}
+ 
                     />
                     <Product 
                         id="4"
                         description="Easy-Going Stretch Oversized Sofa Slipcover 1-Piece Couch Sofa Cover Furniture Protector Soft " 
                         price="41.99" 
                         image={ process.env.PUBLIC_URL   +'/images/products/sofa.jpg'}  
-                        rating={2}   
+                        rating={2}  
+                        
+                        qty={1}
+ 
                     />
                     <Product 
                         id="5"
@@ -48,6 +58,9 @@ function Home() {
                         price="8.09" 
                         image={ process.env.PUBLIC_URL   +'/images/products/watch.jpg'}  
                         rating={1}   
+
+                        qty={1}
+
                     />
                 </div>
                 <div className="home_row">
@@ -56,7 +69,10 @@ function Home() {
                         description="Simple Modern 17oz Bolt Sports Water Bottle - Stainless Steel - Double Wall Vacuum Insulated - Leak Proof Bottle Ombre: Havana" 
                         price="11.26" 
                         image={ process.env.PUBLIC_URL   +'/images/products/bottle.jpg'}  
-                        rating={0}   
+                        rating={0}  
+
+
+                        qty={1}
                     />
                 </div>
             </div>

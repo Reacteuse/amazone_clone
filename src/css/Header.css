@@ -43,7 +43,7 @@
 .header_option {
     display: flex ; 
     flex-direction: column;
-    margin-left: 10px;
+    margin-left: 30px;
     margin-right: 10px;
 }
 .header_optionPrimary {
@@ -62,9 +62,6 @@
 .header_basket {
     color: rgb(255, 255, 255);
     margin-left: 10px;
-}
-.header_basketCount {
-    color: #FF9900;
-    margin-left: 10px;
     margin-right: 10px;
+
 }

@@ -1,11 +1,11 @@
 import React , { forwardRef }  from 'react'
-import { Star, StarBorder } from '@material-ui/icons'
 import 'css/Basket.css'
 import { useStateValue } from 'Redux/StateProvider'
+import { Rating } from '@material-ui/lab'
 
 
 
-const Basket = forwardRef(({id, description , image, price, rating}, ref) => {
+const Basket = forwardRef(({id, description , image, price, rating , qty}, ref) => {
     const [{},dispatch] = useStateValue()
  
     const removeFromBasket = () => {
@@ -23,14 +23,16 @@ const Basket = forwardRef(({id, description , image, price, rating}, ref) => {
             />
             <div className="basket_info">
                 <small>{description}</small>
+                <strong>quantity : {qty}</strong>
                 <strong>{price} $</strong>
                 <div className="product_rating">
-                    {Array(rating).fill().map(()=>(
-                        <Star />
-                    ))}
-                    {Array(5 - rating).fill().map(()=>(
-                        <StarBorder/>
-                    ))}
+                    <Rating
+                        name="simple-controlled"
+                        size="large"
+                        value={rating}
+                        precision={0.5}
+                        readOnly
+                    />
                 </div>
                 <button onClick={removeFromBasket}  >
                     remove from the basket
