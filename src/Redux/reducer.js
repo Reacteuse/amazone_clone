@@ -18,12 +18,12 @@ const reducer = (state , action) => {
                 action.item.qty = 1
                 copyBasket.push(action.item)
             }else{
-                copyBasket[idx].qty = copyBasket[idx].qty+1
+                copyBasket[idx].qty += 1 
                 console.log(copyBasket[idx].qty)
             }
             return{
                 ...state,
-                basket: copyBasket
+                basket: [...copyBasket]
             }
 
         case "REMOVE_FROM_BASKET":
