@@ -28,7 +28,7 @@ function Home() {
                         image={ process.env.PUBLIC_URL   +'/images/products/stand.jpg'}  
                         rating={3}   
 
-                        qty={1}
+                        qty={0}
                     />
                  </div>
                 <div className="home_row">
@@ -39,7 +39,7 @@ function Home() {
                         image={ process.env.PUBLIC_URL   +'/images/products/cable.jpg'}  
                         rating={5}  
                         
-                        qty={1}
+                        qty={0}
  
                     />
                     <Product 
@@ -49,7 +49,7 @@ function Home() {
                         image={ process.env.PUBLIC_URL   +'/images/products/sofa.jpg'}  
                         rating={2}  
                         
-                        qty={1}
+                        qty={0}
  
                     />
                     <Product 
@@ -59,7 +59,7 @@ function Home() {
                         image={ process.env.PUBLIC_URL   +'/images/products/watch.jpg'}  
                         rating={1}   
 
-                        qty={1}
+                        qty={0}
 
                     />
                 </div>
@@ -69,10 +69,10 @@ function Home() {
                         description="Simple Modern 17oz Bolt Sports Water Bottle - Stainless Steel - Double Wall Vacuum Insulated - Leak Proof Bottle Ombre: Havana" 
                         price="11.26" 
                         image={ process.env.PUBLIC_URL   +'/images/products/bottle.jpg'}  
-                        rating={0}  
+                        rating={2}  
 
 
-                        qty={1}
+                        qty={0}
                     />
                 </div>
             </div>

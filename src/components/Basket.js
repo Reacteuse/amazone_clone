@@ -2,6 +2,8 @@ import React , { forwardRef }  from 'react'
 import 'css/Basket.css'
 import { useStateValue } from 'Redux/StateProvider'
 import { Rating } from '@material-ui/lab'
+import { IconButton } from '@material-ui/core'
+import { DeleteForever } from '@material-ui/icons'
 
 
 
@@ -11,6 +13,13 @@ const Basket = forwardRef(({id, description , image, price, rating , qty}, ref) 
     const removeFromBasket = () => {
         dispatch({
             type : 'REMOVE_FROM_BASKET',
+            id : id
+        })
+    }
+
+    const removeQty = () => {
+        dispatch({
+            type : 'REMOVE_QTY',
             id : id
         })
     }
@@ -34,9 +43,14 @@ const Basket = forwardRef(({id, description , image, price, rating , qty}, ref) 
                         readOnly
                     />
                 </div>
-                <button onClick={removeFromBasket}  >
-                    remove from the basket
-                </button>
+                <div className="basket_button">
+                    <button onClick={removeQty} className="button_qty"  >
+                        remove quantity
+                    </button>
+                    <IconButton onClick={removeFromBasket} style={{color : "#ff9a02 ", margin: "10px"}} >
+                        <DeleteForever />
+                    </IconButton>
+                </div>
             </div>
         </div>
     )

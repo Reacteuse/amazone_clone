@@ -17,7 +17,7 @@ margin-top: 30px;
     background-color: white;
     border-radius: 8px;
     z-index: 1;
-    width: 92%
+    width: 80%
     
 }
 
@@ -37,25 +37,33 @@ margin-top: 30px;
 }
 
 .basket_info > small {
-     margin-bottom: 5px;
+     margin-bottom: 8px;
 }
 
 .basket_info > strong {
     margin-bottom: 5px;
 }
 
-.basket_info > button {
+.basket_button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.button_qty {
     background-color: #ff9a02;
     color: #111111;
     border : none ;
     border-radius: 7px;
-    padding:5px;
-    margin-top: 10px;
+    padding:8px;
+    margin: 10px;
 }
 
  
 
-.basket_info > button:hover {
+.button_qty:hover {
     background: #f49403;
     color: #fff;
     border-radius: 5px;

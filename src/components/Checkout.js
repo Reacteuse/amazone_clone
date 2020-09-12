@@ -5,12 +5,21 @@ import Subtotal from "components/Subtotal"
 import Basket from "components/Basket"
 import { useStateValue } from 'Redux/StateProvider'
 import {getBasketTotal} from "Redux/reducer"
+import { useHistory } from 'react-router-dom'
 
 import FlipMove from 'react-flip-move';
 
 function Checkout () {
     const [{basket,user}] = useStateValue ()
-
+    const history = useHistory()
+    const checkout = (event) => {
+        event.preventDefault()
+        if(user){
+            history.push('/Payment')
+        }else{
+            history.push('/login')
+        }
+    }
      return (
         <div className="checkout_root">
             {/* RIGHT CARD */}
@@ -29,7 +38,7 @@ function Checkout () {
                         duration={500}
                     >
                         {basket.map((elmt)=>(
-                            <Basket   key={elmt.id} id={elmt.id} description={elmt.description} image={elmt.image} price={elmt.price} rating={elmt.rating} qty={elmt.qty}  />
+                            <Basket  key={elmt.id} id={elmt.id} description={elmt.description} image={elmt.image} price={elmt.price} rating={elmt.rating} qty={elmt.qty}  />
                         ))}
                     </FlipMove>
          
@@ -60,7 +69,7 @@ function Checkout () {
                         suffix={" $"}
                     />
                     <div className="checkout_button">
-                        <button>
+                        <button onClick={checkout}>
                             proceed to checkout
                         </button>
                     </div>

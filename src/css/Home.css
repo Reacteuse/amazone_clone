@@ -11,7 +11,7 @@
 .home_coverImage {
     width: 100%;
     z-index: -1;
-    margin-bottom: -250px;
+    margin-bottom: -180px;
     mask-image: linear-gradient(to bottom, rgb(0, 0, 0) , rgba(0, 0, 0, 0));
 }
 .home_row{

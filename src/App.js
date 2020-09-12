@@ -6,22 +6,15 @@ import Home from "components/Home"
 import Checkout from "components/Checkout"
 import Login from "components/Login"
 import Register from 'components/Register'
+import Payment from 'components/Payment'
 import {auth} from 'firebaseInit/firebase'
 import {useStateValue} from "Redux/StateProvider"
 
 
-/* import { SnackbarProvider } from 'notistack';
-import {IconButton } from '@material-ui/core';
-import { Close } from '@material-ui/icons';
 
- */
 
 function App() {
-
   const [{},dispatch] = useStateValue()
-/*   const notistackRef = React.createRef();
-  const onClickDismiss = key => () => {notistackRef.current.closeSnackbar(key)} */
-
   useEffect(() => {
     auth.onAuthStateChanged(authUser => {
       if (authUser) {
@@ -43,6 +36,10 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
+          <Route path="/payment">
+            <Header/>
+            <Payment />
+          </Route>
           <Route path="/register">
             <Register/>
           </Route>
@@ -55,7 +52,29 @@ function App() {
           </Route>
           <Route path="/">
             <Header/>
- {/*            <SnackbarProvider 
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+
+
+
+/* import { SnackbarProvider } from 'notistack';
+import {IconButton } from '@material-ui/core';
+import { Close } from '@material-ui/icons';
+
+ */
+
+ /*   const notistackRef = React.createRef();
+  const onClickDismiss = key => () => {notistackRef.current.closeSnackbar(key)} */
+
+  /*            <SnackbarProvider 
               maxSnack={3} 
               hideIconVariant 
               dense
@@ -66,14 +85,7 @@ function App() {
                   </IconButton>
               )}
               style={{marginTop:"20px"}}
-            > */}
-              <Home />
-         {/*    </SnackbarProvider> */}
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
-}
-
-export default App;
+            > 
+          
+             </SnackbarProvider> 
+          */
